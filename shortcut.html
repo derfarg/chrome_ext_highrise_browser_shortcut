@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    function open_highrise(url_to_highrise){
+        window.open("https://" + url_to_highrise + ".highrisehq.com");
+    }
+    var highrise_url = localStorage["highrise_url"];
+    if(!highrise_url){
+        window.open("options.html");
+    } else {
+        open_highrise(highrise_url);
+    }
+</script>

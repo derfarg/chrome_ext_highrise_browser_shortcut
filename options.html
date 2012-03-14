@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Highrise Browser Shortcut</title>
+</head>
+<script type="text/javascript">
+function get_input(){
+  var input = document.getElementById("input");
+  var input_value = input.value;
+  localStorage["highrise_url"] = input_value;
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+function restore_options() {
+  var highrise_url = localStorage["highrise_url"];
+  var select = document.getElementById("input");
+  select.value = highrise_url;
+}
+</script>
+
+<body onload="restore_options()">
+  <form>
+    https://<input type="text" name="nombre" id="input"/>.highrisehq.com
+    <button onclick="get_input()">Save</button>
+  </form>
+  <div id="status"></div>
+</body>
+</html>
